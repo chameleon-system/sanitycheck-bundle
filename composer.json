@@ -1,0 +1,52 @@
+{
+    "name": "chameleon-system/sanitycheck-bundle",
+    "type": "symfony-bundle",
+    "description": "A Symfony bundle for chameleon-system/sanitycheck",
+    "keywords": [
+        "sanity",
+        "check",
+        "monitoring",
+        "administration",
+        "bundle",
+        "Symfony"
+    ],
+    "homepage": "http://www.chameleon-system.de",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ESONO AG",
+            "email": "info@chameleonsystem.com",
+            "homepage": "https://www.chameleonsystem.com",
+            "role": "Company"
+        }
+    ],
+    "extra": {
+        "name": "SanityCheck Bundle",
+        "dev_info_installation": "",
+        "dev_info_usage": "",
+        "pricegroup": 0,
+        "public": false,
+        "screenshotfolder_id": ""
+    },
+    "require": {
+        "chameleon-system/sanitycheck": "dev-master",
+        "symfony/config": "~2.3|~3.0|~4.0",
+        "symfony/console": "~2.3|~3.0|~4.0",
+        "symfony/dependency-injection": "~2.3|~3.0|~4.0",
+        "symfony/http-kernel": "~2.3|~3.0|~4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~5.2|~6.0|~7.0"
+    },
+    "suggest": {
+        "phpmailer/phpmailer": "To use the PHPMailer message output."
+    },
+    "autoload": {
+        "psr-4": {
+            "ChameleonSystem\\SanityCheckBundle\\": [
+                "",
+                "Tests"
+            ]
+        }
+    }
+}
