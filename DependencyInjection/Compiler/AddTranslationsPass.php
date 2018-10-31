@@ -46,7 +46,7 @@ class AddTranslationsPass implements CompilerPassInterface
      * Symfony versions, so we need to be able to poke around.
      *
      * @param Definition $translatorDefinition
-     * @param int $index
+     * @param int        $index
      *
      * @return bool
      */
