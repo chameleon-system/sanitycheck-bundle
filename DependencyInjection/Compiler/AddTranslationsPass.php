@@ -17,7 +17,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 
 /**
- * AddCheckOutputsPass adds all services tagged with 'chameleon_system.sanity_check.output' to the list of outputs.
+ * AddTranslationsPass adds translations from the sanitycheck library to the Symfony translator.
  */
 class AddTranslationsPass implements CompilerPassInterface
 {
@@ -41,6 +41,15 @@ class AddTranslationsPass implements CompilerPassInterface
         $translatorDefinition->replaceArgument($index, $options);
     }
 
+    /**
+     * Checks if $translatorDefinition has an options array at the expected $index. The index is different between
+     * Symfony versions, so we need to be able to poke around.
+     *
+     * @param Definition $translatorDefinition
+     * @param int $index
+     *
+     * @return bool
+     */
     private function hasResourceFilesOption(Definition $translatorDefinition, int $index): bool
     {
         $options = $translatorDefinition->getArgument($index);
