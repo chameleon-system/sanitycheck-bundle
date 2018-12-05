@@ -1,12 +1,14 @@
 Chameleon System SanityCheckBundle
 ==================================
 
-The SanityCheckBundle adds support for checks that aid you in finding common problems when running your application.
-For example, you can ensure that there is enough disk space, or permissions on certain files are granted. With this bundle
-you can configure checks that verify that the requirements for running the applications are met.
+The SanityCheckBundle is a Symfony integration bundle for the SanityCheck library.
 
-Where these checks are performed is up to you. In an installer, from the command line or an admin interface - just add
-the checks wherever they suit your needs.
+SanityCheck adds diagnosis capabilities to any PHP application. By defining a range of checks, it can be ensured that
+requirements for running the application are met continuously. For example, available disk space, granted file
+permissions or availability of remote systems can be checked.
+
+When and where these checks are performed is up to you. In an installer, from the command line or an admin
+interface - just add the checks wherever they suit your needs.
 
 Documentation
 -------------
@@ -26,4 +28,4 @@ The SanityCheckBundle is licensed under the MIT License. See the complete licens
 Reporting an issue or a feature request
 ---------------------------------------
 
-TODO
+Please report issues and feature requests at the official GitHub repository: https://github.com/chameleon-system/sanitycheck-bundle
