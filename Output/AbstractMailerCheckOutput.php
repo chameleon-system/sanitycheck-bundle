@@ -26,7 +26,7 @@ abstract class AbstractMailerCheckOutput extends AbstractTranslatingCheckOutput
      */
     protected $mailerParameters;
     /**
-     * @var null|string
+     * @var string|null
      */
     protected $mailerServiceId;
     /**
