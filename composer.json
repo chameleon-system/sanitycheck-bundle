@@ -37,7 +37,7 @@
     },
     "require-dev": {
         "chameleon-system/code-style-config": "dev-master@dev",
-        "phpunit/phpunit": "~7.0"
+        "phpunit/phpunit": "^8.5.13"
     },
     "suggest": {
         "phpmailer/phpmailer": "To use the PHPMailer message output."
