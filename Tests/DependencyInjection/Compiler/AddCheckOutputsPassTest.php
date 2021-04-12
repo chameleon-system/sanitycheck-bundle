@@ -85,7 +85,7 @@ class AddCheckOutputsPassTest extends TestCase
         $this->addCheckOutputsPass->process($this->container->reveal());
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->addCheckOutputsPass = new AddCheckOutputsPass();
