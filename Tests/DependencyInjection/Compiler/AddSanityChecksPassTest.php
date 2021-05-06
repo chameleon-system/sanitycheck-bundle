@@ -152,7 +152,7 @@ class AddSanityChecksPassTest extends TestCase
         $this->addSanityChecksPass->process($this->container->reveal());
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->addSanityChecksPass = new AddSanityChecksPass();

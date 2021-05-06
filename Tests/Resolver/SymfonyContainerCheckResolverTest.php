@@ -212,7 +212,7 @@ class SymfonyContainerCheckResolverTest extends TestCase
         $this->assertEquals($revealedCheck3, $checks[2]);
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->container = $this->prophesize(ContainerBuilder::class);
