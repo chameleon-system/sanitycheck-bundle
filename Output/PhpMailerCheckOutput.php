@@ -12,7 +12,7 @@
 namespace ChameleonSystem\SanityCheckBundle\Output;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * PhpMailerCheckOutput is used to write a CheckOutcome to an email address.
