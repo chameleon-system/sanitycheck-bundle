@@ -12,8 +12,9 @@
 namespace ChameleonSystem\SanityCheckBundle\Translator;
 
 use ChameleonSystem\SanityCheck\Translator\CheckTranslatorInterface;
-use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
+// NOTE/TODO this interface is missing; but class is not used anyway..
 class SymfonyTranslator implements CheckTranslatorInterface
 {
     /**
