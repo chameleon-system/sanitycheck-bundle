@@ -15,20 +15,16 @@ use ChameleonSystem\SanityCheck\Check\CheckInterface;
 use ChameleonSystem\SanityCheck\Exception\CheckNotFoundException;
 use ChameleonSystem\SanityCheck\Resolver\CheckResolverInterface;
 use Symfony\Component\DependencyInjection\Container;
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\DependencyInjection\ServiceLocator;
 
 class SymfonyContainerCheckResolver implements CheckResolverInterface
 {
-    private $container;
-    private $checkDataHolder;
+    private ServiceLocator $container;
+    private CheckDataHolderInterface $checkDataHolder;
 
-    /**
-     * @param ContainerInterface       $container
-     * @param CheckDataHolderInterface $checkDataHolder
-     */
-    public function __construct(ContainerInterface $container, CheckDataHolderInterface $checkDataHolder)
+    public function __construct(ServiceLocator $serviceLocator, CheckDataHolderInterface $checkDataHolder)
     {
-        $this->container = $container;
+        $this->container = $serviceLocator;
         $this->checkDataHolder = $checkDataHolder;
     }
 
