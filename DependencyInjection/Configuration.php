@@ -28,8 +28,8 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $root = $treeBuilder->root('chameleon_system_sanity_check');
+        $treeBuilder = new TreeBuilder('chameleon_system_sanity_check');
+        $root = $treeBuilder->getRootNode();
 
         $root
             ->canBeDisabled()
@@ -45,8 +45,8 @@ class Configuration implements ConfigurationInterface
      */
     private function getOutputConfiguration()
     {
-        $subTreeBuilder = new TreeBuilder();
-        $subTree = $subTreeBuilder->root('output');
+        $subTreeBuilder = new TreeBuilder('output');
+        $subTree = $subTreeBuilder->getRootNode();
 
         $subTree
             ->children()
@@ -62,8 +62,8 @@ class Configuration implements ConfigurationInterface
      */
     private function getLogOutputConfiguration()
     {
-        $subTreeBuilder = new TreeBuilder();
-        $subTree = $subTreeBuilder->root('log');
+        $subTreeBuilder = new TreeBuilder('log');
+        $subTree = $subTreeBuilder->getRootNode();
 
         $subTree
             ->children()
@@ -80,8 +80,8 @@ class Configuration implements ConfigurationInterface
      */
     private function getMailerConfiguration()
     {
-        $subTreeBuilder = new TreeBuilder();
-        $subTree = $subTreeBuilder->root('mail');
+        $subTreeBuilder = new TreeBuilder('mail');
+        $subTree = $subTreeBuilder->getRootNode();
 
         $subTree
             ->canBeEnabled()
@@ -111,8 +111,8 @@ class Configuration implements ConfigurationInterface
 
     private function getTranslationConfiguration()
     {
-        $subTreeBuilder = new TreeBuilder();
-        $subTree = $subTreeBuilder->root('translation');
+        $subTreeBuilder = new TreeBuilder('translation');
+        $subTree = $subTreeBuilder->getRootNode();
 
         $subTree
             ->children()

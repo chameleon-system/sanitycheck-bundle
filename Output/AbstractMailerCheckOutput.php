@@ -13,7 +13,7 @@ namespace ChameleonSystem\SanityCheckBundle\Output;
 
 use ChameleonSystem\SanityCheck\Outcome\CheckOutcome;
 use ChameleonSystem\SanityCheck\Output\AbstractTranslatingCheckOutput;
-use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * AbstractMailerCheckOutput is a base class from which different mailers can be derived.
