@@ -30,10 +30,10 @@
     },
     "require": {
         "chameleon-system/sanitycheck": "~7.1.0",
-        "symfony/config": "^5.4",
-        "symfony/console": "^5.4",
-        "symfony/dependency-injection": "^5.4",
-        "symfony/http-kernel": "^5.4"
+        "symfony/config": "~5.4.0",
+        "symfony/console": "~5.4.0",
+        "symfony/dependency-injection": "~5.4.0",
+        "symfony/http-kernel": "~5.4.0"
     },
     "require-dev": {
         "chameleon-system/code-style-config": "dev-master@dev",
