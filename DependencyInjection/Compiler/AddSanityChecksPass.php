@@ -12,7 +12,9 @@
 namespace ChameleonSystem\SanityCheckBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
+use Symfony\Component\DependencyInjection\Compiler\ServiceLocatorTagPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Reference;
 
 /**
  * AddSanityChecksPass finds all services tagged with 'chameleon_system.sanity_check.check' and adds them
@@ -29,12 +31,13 @@ class AddSanityChecksPass implements CompilerPassInterface
             'chameleon_system.sanity_check.check'
         );
 
-        $checkData = array();
+        $checkData = [];
+        $services = [];
         foreach ($taggedServices as $serviceId => $attributes) {
             $bundleName = $this->getBundleAliasFromServiceId($serviceId);
 
             if (!array_key_exists($bundleName, $checkData)) {
-                $checkData[$bundleName] = array();
+                $checkData[$bundleName] = [];
             }
             $translationKey = null;
             foreach ($attributes as $tag) {
@@ -44,15 +47,16 @@ class AddSanityChecksPass implements CompilerPassInterface
                     }
                 }
             }
-            $checkData[$bundleName][] = array($serviceId, $translationKey);
+            $checkData[$bundleName][] = [$serviceId, $translationKey];
+
+            $services[$serviceId] = new Reference($serviceId);
         }
-        if (empty($checkData)) {
-            return;
-        }
-        $container->findDefinition('chameleon_system_sanity_check.check_data_holder')->addMethodCall(
-            'setBundleCheckData',
-            array($checkData)
-        );
+
+        $checkHolder = $container->getDefinition('chameleon_system_sanity_check.check_data_holder');
+        $checkHolder->addMethodCall('setBundleCheckData', array($checkData));
+
+        $checkResolver = $container->getDefinition('chameleon_system_sanity_check.check_resolver');
+        $checkResolver->replaceArgument(0, ServiceLocatorTagPass::register($container, $services));
     }
 
     private function getBundleAliasFromServiceId($serviceId)

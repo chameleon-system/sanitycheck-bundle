@@ -19,7 +19,7 @@
 
         <service id="chameleon_system_sanity_check.check_resolver"
                  class="ChameleonSystem\SanityCheckBundle\Resolver\SymfonyContainerCheckResolver">
-            <argument type="service" id="service_container"/>
+            <argument/> <!-- Will be replaced by AddSanityChecksPass -->
             <argument type="service" id="chameleon_system_sanity_check.check_data_holder"/>
         </service>
 
